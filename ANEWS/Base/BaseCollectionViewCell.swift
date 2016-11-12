@@ -38,7 +38,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
         ), forCellReuseIdentifier: "BaseTwoCell")
         tableView.register(UINib.init(nibName: "BaseThreeCell", bundle: nil
         ), forCellReuseIdentifier: "BaseThreeCell")
-        tableView.backgroundColor = UIColor.cyan
+        tableView.backgroundColor = UIColor.clear
         tableView.header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.page = 1
             self.flag = true
@@ -57,52 +57,44 @@ class BaseCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.contentView.backgroundColor = UIColor.darkGray
-        //        if let array = self.readDataFromLocal(){  // 读取缓存
-        //            self.dataArr = NSMutableArray.init(array: array)
-        self.tableView.reloadData()
-        //        }else{
-        //            self.loadData()
-        //        }
+        if let array = self.readDataFromLocal(){  // 读取缓存
+            self.dataArr = NSMutableArray.init(array: array)
+//            print("读取数据:\(self.dataArr.count)")
+            self.tableView.reloadData()
+        }else{
+//            self.loadData()
+        }
     }
     //网络加载com.newsfirst.bj
     func loadData() -> Void {
+//        print("id = \(self.channelID!)")
         let preArg = "channelId=\(self.channelID!)&page="
         let behArg = "&needContent=0&needHtml=0"
         let httpArg = String.init(format: "%@%d%@", preArg,self.page,behArg)
-        print("httpArg = \(httpArg)")
         HDManager.startLoading()
         NetTool.requestBaseData(HOME_URL: HOME_URL, httpArg: httpArg, callBack: { (array, error) in
             if error == nil{
-                //                if self.flag == true{
-                //                    self.dataArr.removeAllObjects()
-                //                    self.writeDataToLocal(array: array! as NSArray)
-                //                }
+                if self.flag == true{  // 如果下拉刷新 ,清除原来所有的数据
+                    self.dataArr.removeAllObjects()
+                    self.writeDataToLocal(array: array! as NSArray)
+                }
                 self.dataArr.addObjects(from: array!)
                 self.tableView.reloadData()
-                //                if !self.flag{
-                //                    self.writeDataToLocal(array: array! as NSArray)
-                //                }
-
+                if !self.flag{  // 触底加载时,往本地存数据
+                    self.writeDataToLocal(array: array! as NSArray)
+                }
             }else{
-                print("error = \(error)")
+//                print("error = \(error)")
             }
-
             self.tableView.header.endRefreshing()
             self.tableView.footer.endRefreshing()
         })
         HDManager.stopLoading()
     }
 
-
-
-
-
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
 
 
     // 往本地存储数据
@@ -112,7 +104,7 @@ class BaseCollectionViewCell: UICollectionViewCell {
         let path = String.init(format: "%@/Documents/%@.txt", NSHomeDirectory(),name)
         let flag = NSKeyedArchiver.archiveRootObject(array, toFile: path)
         if flag{
-            print("\(path)归档成功")
+//            print("\(path)归档成功")
         }
     }
     // 读取数据
@@ -123,12 +115,15 @@ class BaseCollectionViewCell: UICollectionViewCell {
         return array
     }
 
+    func tableViewReload() -> Void {
+        self.tableView.reloadData()
+    }
+
 }
 
 
 extension BaseCollectionViewCell:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("count = \(self.dataArr.count)")
         return self.dataArr.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

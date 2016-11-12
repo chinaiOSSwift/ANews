@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		BC81C0D71DD5E0E0009511D6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC81C0D61DD5E0E0009511D6 /* DetailViewController.swift */; };
 		BC81C0DB1DD5EC67009511D6 /* goBack.png in Resources */ = {isa = PBXBuildFile; fileRef = BC81C0DA1DD5EC67009511D6 /* goBack.png */; };
+		BC81C11F1DD6F2F5009511D6 /* SQLiteTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC81C11E1DD6F2F5009511D6 /* SQLiteTool.swift */; };
+		BC81C1221DD6F31D009511D6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BC81C1211DD6F31D009511D6 /* libsqlite3.tbd */; };
+		BC81C12F1DD703A6009511D6 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81C1251DD703A6009511D6 /* FMDatabase.m */; };
+		BC81C1301DD703A6009511D6 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81C1271DD703A6009511D6 /* FMDatabaseAdditions.m */; };
+		BC81C1311DD703A6009511D6 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81C1291DD703A6009511D6 /* FMDatabasePool.m */; };
+		BC81C1321DD703A6009511D6 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81C12B1DD703A6009511D6 /* FMDatabaseQueue.m */; };
+		BC81C1331DD703A6009511D6 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81C12E1DD703A6009511D6 /* FMResultSet.m */; };
+		BC81C1351DD703F9009511D6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC81C1341DD703F9009511D6 /* DataManager.swift */; };
+		BC81C1381DD71327009511D6 /* SetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC81C1361DD71327009511D6 /* SetCell.swift */; };
+		BC81C1391DD71327009511D6 /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC81C1371DD71327009511D6 /* SetCell.xib */; };
+		BC81C13B1DD7199C009511D6 /* FavoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC81C13A1DD7199C009511D6 /* FavoViewController.swift */; };
 		BCB9F3A01DD4240F00E0C273 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9F39F1DD4240F00E0C273 /* AppDelegate.swift */; };
 		BCB9F3A21DD4240F00E0C273 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9F3A11DD4240F00E0C273 /* ViewController.swift */; };
 		BCB9F3A51DD4240F00E0C273 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB9F3A31DD4240F00E0C273 /* Main.storyboard */; };
@@ -163,6 +174,23 @@
 /* Begin PBXFileReference section */
 		BC81C0D61DD5E0E0009511D6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BC81C0DA1DD5EC67009511D6 /* goBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goBack.png; sourceTree = "<group>"; };
+		BC81C11E1DD6F2F5009511D6 /* SQLiteTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteTool.swift; sourceTree = "<group>"; };
+		BC81C1211DD6F31D009511D6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BC81C1241DD703A6009511D6 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		BC81C1251DD703A6009511D6 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		BC81C1261DD703A6009511D6 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		BC81C1271DD703A6009511D6 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		BC81C1281DD703A6009511D6 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		BC81C1291DD703A6009511D6 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		BC81C12A1DD703A6009511D6 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		BC81C12B1DD703A6009511D6 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		BC81C12C1DD703A6009511D6 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		BC81C12D1DD703A6009511D6 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		BC81C12E1DD703A6009511D6 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		BC81C1341DD703F9009511D6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		BC81C1361DD71327009511D6 /* SetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCell.swift; sourceTree = "<group>"; };
+		BC81C1371DD71327009511D6 /* SetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
+		BC81C13A1DD7199C009511D6 /* FavoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoViewController.swift; sourceTree = "<group>"; };
 		BCB9F39C1DD4240F00E0C273 /* ANEWS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANEWS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB9F39F1DD4240F00E0C273 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCB9F3A11DD4240F00E0C273 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +388,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC81C1221DD6F31D009511D6 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +409,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC81C1201DD6F31D009511D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC81C1211DD6F31D009511D6 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC81C1231DD703A6009511D6 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				BC81C1241DD703A6009511D6 /* FMDatabase.h */,
+				BC81C1251DD703A6009511D6 /* FMDatabase.m */,
+				BC81C1261DD703A6009511D6 /* FMDatabaseAdditions.h */,
+				BC81C1271DD703A6009511D6 /* FMDatabaseAdditions.m */,
+				BC81C1281DD703A6009511D6 /* FMDatabasePool.h */,
+				BC81C1291DD703A6009511D6 /* FMDatabasePool.m */,
+				BC81C12A1DD703A6009511D6 /* FMDatabaseQueue.h */,
+				BC81C12B1DD703A6009511D6 /* FMDatabaseQueue.m */,
+				BC81C12C1DD703A6009511D6 /* FMDB.h */,
+				BC81C12D1DD703A6009511D6 /* FMResultSet.h */,
+				BC81C12E1DD703A6009511D6 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		BCB9F3931DD4240F00E0C273 = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +469,7 @@
 				BCB9F3B31DD4240F00E0C273 /* ANEWSTests */,
 				BCB9F3BE1DD4240F00E0C273 /* ANEWSUITests */,
 				BCB9F39D1DD4240F00E0C273 /* Products */,
+				BC81C1201DD6F31D009511D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -532,6 +588,8 @@
 				BCB9F41A1DD4260D00E0C273 /* ConfirgFile.swift */,
 				BCDF4B4C1DD5553700C16A31 /* Baserequest.swift */,
 				BCDF4B4E1DD5A9C300C16A31 /* NetTool.swift */,
+				BC81C11E1DD6F2F5009511D6 /* SQLiteTool.swift */,
+				BC81C1341DD703F9009511D6 /* DataManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -540,6 +598,9 @@
 			isa = PBXGroup;
 			children = (
 				BCB9F4371DD42FFC00E0C273 /* MeViewController.swift */,
+				BC81C13A1DD7199C009511D6 /* FavoViewController.swift */,
+				BC81C1361DD71327009511D6 /* SetCell.swift */,
+				BC81C1371DD71327009511D6 /* SetCell.xib */,
 			);
 			path = "个人中心";
 			sourceTree = "<group>";
@@ -730,6 +791,7 @@
 		BCDF4A961DD552ED00C16A31 /* ThirdLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				BC81C1231DD703A6009511D6 /* FMDB */,
 				BCDF4A971DD552ED00C16A31 /* ADScrollView */,
 				BCDF4AA81DD552ED00C16A31 /* JSONModel */,
 				BCDF4ABD1DD552ED00C16A31 /* MBProgressHUD */,
@@ -1072,6 +1134,7 @@
 				BCB9F4301DD42F7000E0C273 /* me.png in Resources */,
 				BCB9F3F81DD424E400E0C273 /* 健康.png in Resources */,
 				BCB9F4161DD4255800E0C273 /* InterestionViewController.xib in Resources */,
+				BC81C1391DD71327009511D6 /* SetCell.xib in Resources */,
 				BCB9F4351DD42F7000E0C273 /* set@2.png in Resources */,
 				BCB9F4311DD42F7000E0C273 /* me@2x.png in Resources */,
 				BCB9F3FC1DD424E400E0C273 /* 头条.png in Resources */,
@@ -1140,14 +1203,18 @@
 				BCDF4B251DD552ED00C16A31 /* HDManager.m in Sources */,
 				BCB9F5411DD48BBE00E0C273 /* TVseriesCell.swift in Sources */,
 				BCDF4B2B1DD552ED00C16A31 /* MJRefreshHeader.m in Sources */,
+				BC81C1351DD703F9009511D6 /* DataManager.swift in Sources */,
 				BCDF4B2C1DD552ED00C16A31 /* MJRefreshAutoGifFooter.m in Sources */,
 				BCDF4B161DD552ED00C16A31 /* CycleImageCell.m in Sources */,
+				BC81C1301DD703A6009511D6 /* FMDatabaseAdditions.m in Sources */,
 				BCB9F53D1DD48B6F00E0C273 /* SexCell.swift in Sources */,
 				BCDF4B3F1DD552ED00C16A31 /* SDWebImageCompat.m in Sources */,
 				BCB9F50C1DD46C9800E0C273 /* BaseZeroCell.swift in Sources */,
 				BCDF4B361DD552ED00C16A31 /* MJRefreshConst.m in Sources */,
 				BCB9F5371DD48B4E00E0C273 /* HouseCell.swift in Sources */,
+				BC81C1381DD71327009511D6 /* SetCell.swift in Sources */,
 				BCDF4B2E1DD552ED00C16A31 /* MJRefreshAutoStateFooter.m in Sources */,
+				BC81C11F1DD6F2F5009511D6 /* SQLiteTool.swift in Sources */,
 				BCDF4B401DD552ED00C16A31 /* SDWebImageDecoder.m in Sources */,
 				BCDF4B331DD552ED00C16A31 /* MJRefreshNormalHeader.m in Sources */,
 				BCDF4B261DD552ED00C16A31 /* MBProgressHUD.m in Sources */,
@@ -1162,11 +1229,13 @@
 				BCDF4B4A1DD552ED00C16A31 /* UIImageView+WebCache.m in Sources */,
 				BCB9F41B1DD4260D00E0C273 /* ConfirgFile.swift in Sources */,
 				BCB9F4131DD4255800E0C273 /* InterestionCell.swift in Sources */,
+				BC81C1311DD703A6009511D6 /* FMDatabasePool.m in Sources */,
 				BCDF4B431DD552ED00C16A31 /* SDWebImageManager.m in Sources */,
 				BCB9F53F1DD48B9F00E0C273 /* MovieCell.swift in Sources */,
 				BCDF4B301DD552ED00C16A31 /* MJRefreshBackNormalFooter.m in Sources */,
 				BCB9F53B1DD48B6500E0C273 /* HealthCell.swift in Sources */,
 				BCB9F5431DD48BD600E0C273 /* GameCell.swift in Sources */,
+				BC81C1321DD703A6009511D6 /* FMDatabaseQueue.m in Sources */,
 				BCDF4B3D1DD552ED00C16A31 /* NSData+ImageContentType.m in Sources */,
 				BCDF4B1F1DD552ED00C16A31 /* JSONModelError.m in Sources */,
 				BCDF4B321DD552ED00C16A31 /* MJRefreshGifHeader.m in Sources */,
@@ -1189,6 +1258,7 @@
 				BCB9F5351DD48B2800E0C273 /* MilitaryCell.swift in Sources */,
 				BC81C0D71DD5E0E0009511D6 /* DetailViewController.swift in Sources */,
 				BCDF4B451DD552ED00C16A31 /* UIButton+WebCache.m in Sources */,
+				BC81C1331DD703A6009511D6 /* FMResultSet.m in Sources */,
 				BCDF4B381DD552ED00C16A31 /* UIScrollView+MJRefresh.m in Sources */,
 				BCDF4B2A1DD552ED00C16A31 /* MJRefreshFooter.m in Sources */,
 				BCDF4B221DD552ED00C16A31 /* JSONModel+networking.m in Sources */,
@@ -1200,9 +1270,11 @@
 				BCDF4B3E1DD552ED00C16A31 /* SDImageCache.m in Sources */,
 				BCDF4B2F1DD552ED00C16A31 /* MJRefreshBackGifFooter.m in Sources */,
 				BCDF4B171DD552ED00C16A31 /* XTADScrollView.m in Sources */,
+				BC81C12F1DD703A6009511D6 /* FMDatabase.m in Sources */,
 				BCDF4B481DD552ED00C16A31 /* UIImage+WebP.m in Sources */,
 				BCDF4B491DD552ED00C16A31 /* UIImageView+HighlightedWebCache.m in Sources */,
 				BCB9F51F1DD48A1800E0C273 /* InternationalCell.swift in Sources */,
+				BC81C13B1DD7199C009511D6 /* FavoViewController.swift in Sources */,
 				BCDF4B3B1DD552ED00C16A31 /* UIViewController+MLTransition.m in Sources */,
 				BCB9F51A1DD4726A00E0C273 /* BaseThreeCell.swift in Sources */,
 				BCB9F4151DD4255800E0C273 /* InterestionViewController.swift in Sources */,

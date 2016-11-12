@@ -23,7 +23,9 @@
 #import "MJRefresh.h"
 
 #import "HDManager.h"
+
+#import <sqlite3.h>
 //
-//#import "FMDB.h"
+#import "FMDB.h"
 
 #endif /* BridgeHeader_h */

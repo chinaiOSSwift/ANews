@@ -18,10 +18,10 @@ class NetTool: NSObject,URLSessionDelegate{
         let urlStr = String.init(format: "%@?%@", arguments: [httpUrl,httpArg]) as NSString
 
         let url = self.encodeUniCode(urlStr)
-        print("url = \(url)")
+//        print("url = \(url)")
 
         var request = URLRequest.init(url:URL.init(string: url as String)!)
-        request.timeoutInterval = 4
+        request.timeoutInterval = 10
         request.httpMethod = "GET"
         request.addValue(apikey, forHTTPHeaderField: "apikey")
 

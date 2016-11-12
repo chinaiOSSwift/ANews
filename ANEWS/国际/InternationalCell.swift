@@ -15,7 +15,6 @@ class InternationalCell: BaseCollectionViewCell {
         self.channelID = "5572a109b3cdc86cf39001de"
         self.contentView.backgroundColor = UIColor.white
         self.loadData()
-//        super.tableView.reloadData()
     }
 
     required init?(coder aDecoder: NSCoder) {

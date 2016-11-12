@@ -74,7 +74,6 @@ class HomeViewController: ViewController {
         // 注册cell
         for dic in self.loveArr{
             let viewClass:String = dic["view"] as! String
-            //                print(self.swiftClassFromString(className:viewClass))
             collectionView.register(self.swiftClassFromString(className:viewClass), forCellWithReuseIdentifier:viewClass)
         }
         collectionView.contentOffset = CGPoint.init(x: 0, y: 0)
@@ -98,20 +97,6 @@ class HomeViewController: ViewController {
         //print("unicode = \("北京".lengthOfBytes(using: String.Encoding.unicode))")
     }
 
-    /*
-     // MARK: - 标题点击事件
-     func buttonClicked(button:UIButton) -> Void {
-     // 设置上一个
-     let preButton:UIButton = self.titleScrollView.viewWithTag(preIndex) as! UIButton
-     preButton.isSelected = false
-     // 现在的button
-     button.isSelected = true
-     let buttonTag:NSInteger = button.tag
-     self.preIndex = buttonTag
-     // 改变内容显示
-     //        self.contentView.setContentOffset(CGPoint.init(x: Src_W * CGFloat(buttonTag), y: 0), animated: false)
-     }
-     */
 
     //制作头视图
     func makeHeadView() -> Void {
@@ -127,7 +112,7 @@ class HomeViewController: ViewController {
     func customNAV() -> Void {
         self.navigationController!.isNavigationBarHidden = false
         self.navigationController!.navigationBar.barTintColor = NavColor
-        self.navigationItem.title = "新闻快递"
+        self.navigationItem.title = "全年新闻"
         // 个人中心
         let button = UIButton.init(type: UIButtonType.system)
         button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30)
@@ -143,7 +128,8 @@ class HomeViewController: ViewController {
     //MARK: - 个人中心点击事件
     func btnClick(button:UIButton) -> Void {
         let me = MeViewController()
-        me.navigationItem.title =  "个人中心"
+        me.titleName = "全年新闻"
+        me.navigationItem.title = "个人中心"
         self.navigationController!.pushViewController(me, animated: true)
     }
 
@@ -163,8 +149,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let viewClass:String = dic["view"] as! String
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: viewClass, for: indexPath) as! BaseCollectionViewCell
         cell.delegate = self
-//        cell.tableView.reloadData()
-    
         return cell
     }
 
@@ -182,7 +166,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        self.contentView.reloadData()
+        //        self.contentView.reloadData()
         let preButton:UIButton = self.titleScrollView.viewWithTag(preIndex) as! UIButton
         preButton.isSelected = false
         let currentIndex = NSInteger(scrollView.contentOffset.x / Src_W)
@@ -191,16 +175,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.preIndex = currentIndex + 1000
 
         if scrollView.contentOffset.x >= 6 * Src_W{
-            UIView.animate(withDuration: 0.25, animations: { 
+            UIView.animate(withDuration: 0.25, animations: {
                 self.titleScrollView.setContentOffset(CGPoint.init(x: CGFloat(currentIndex - 5) * btnW, y: 0), animated: true)
             })
         }else if scrollView.contentOffset.x <= CGFloat(6) * Src_W{
             self.titleScrollView.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
         }
-
-
-
-
     }
 
     func swiftClassFromString(className: String) -> AnyClass! {

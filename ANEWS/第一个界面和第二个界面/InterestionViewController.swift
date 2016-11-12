@@ -54,7 +54,7 @@ class InterestionViewController: UIViewController {
         let contentView = UICollectionView.init(frame: frame, collectionViewLayout: layout)
         contentView.showsHorizontalScrollIndicator = false
         contentView.showsVerticalScrollIndicator = true
-        contentView.backgroundColor = UIColor.green
+        contentView.backgroundColor = UIColor.white
         // 注册cell
 
         contentView.register(UINib.init(nibName: "InterestionCell", bundle: nil
@@ -105,9 +105,9 @@ class InterestionViewController: UIViewController {
 
     //MARK: - 前进一步
     func goButton() -> Void {
-        for dic in self.loveArr{
-            print("标签名字:\((dic as! NSDictionary)["name"])")
-        }
+//        for dic in self.loveArr{
+//            print("标签名字:\((dic as! NSDictionary)["name"])")
+//        }
         self.writeDataToLocal(self.loveArr)
         // 传值跳转页面
         let home = HomeViewController()
@@ -119,10 +119,10 @@ class InterestionViewController: UIViewController {
     func writeDataToLocal(_ array:NSArray) -> Void{
         // 拼接完整的沙盒路径
         let path = String.init(format: "%@/Documents/%@.array", NSHomeDirectory(),"love")
-        print("归档路径:\(path)")
+//        print("归档路径:\(path)")
         let flag = NSKeyedArchiver.archiveRootObject(array, toFile: path)
         if flag{
-            print("归档成功")
+//            print("归档成功")
         }
     }
 
@@ -132,11 +132,11 @@ class InterestionViewController: UIViewController {
         let array = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? NSArray
         if array != nil{
             self.loveArr = array as! NSMutableArray
-            for dic in array!{
-                print("标签名字:\((dic as! NSDictionary)["name"])")
-            }
+//            for dic in array!{
+//                print("标签名字:\((dic as! NSDictionary)["name"])")
+//            }
         }else{
-            print("页面第一次进入")
+//            print("页面第一次进入")
         }
     }
 
@@ -177,7 +177,7 @@ extension InterestionViewController:UICollectionViewDelegateFlowLayout,UICollect
         if cell.iconBtn.isSelected{
             cell.iconBtn.isSelected = false
             cell.iconBtn.setBackgroundImage(UIImage.init(named: "不选中.png"), for: .normal)
-            print("不选了")
+//            print("不选了")
             collectionView.deselectItem(at: indexPath, animated: true) // 反选
 
             self.loveArr.remove(self.dataSource[indexPath.item]) //移除选中的标签
@@ -186,7 +186,7 @@ extension InterestionViewController:UICollectionViewDelegateFlowLayout,UICollect
             cell.iconBtn.isSelected = true
             cell.iconBtn.setBackgroundImage(UIImage.init(named: "选中.png"), for: .selected)
             self.loveArr.add(self.dataSource[indexPath.item]) //添加选中的标签
-            print("选中了")
+//            print("选中了")
         }
     }
 

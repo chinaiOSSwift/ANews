@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
 
     var model:BaseModel!
     var sourceName:String!
+    var flag:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.makeUI()
@@ -27,11 +28,26 @@ class DetailViewController: UIViewController {
         button.setImage(UIImage.init(named: "icon_star@2x.png")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), for: UIControlState.normal)
         button.addTarget(self, action: #selector(buttonClick(sender:)), for: UIControlEvents.touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: button)
+
+        if DataManager.manager.findOne(title: self.model.title){
+            button.setImage(UIImage.init(named: "icon_star_full@2x.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            flag = true
+        }
+
     }
 
 
     func buttonClick(sender:UIButton) -> Void {
-        print("点击了收藏")
+        if !flag{
+            DataManager.manager.insert(model: model)
+            print("收藏成功")
+            // 弹出收藏成功界面
+            sender.setImage(UIImage.init(named: "icon_star_full@2x.png")!.withRenderingMode(UIImageRenderingMode.alwaysOriginal), for: UIControlState.normal)
+        }else{
+            print("移除收藏")
+            DataManager.manager.deleteOne(title: model.title)
+            sender.setImage(UIImage.init(named: "icon_star@2x.png")!.withRenderingMode(UIImageRenderingMode.alwaysOriginal), for: UIControlState.normal)
+        }
     }
 
     func makeLeftBar() -> Void {
